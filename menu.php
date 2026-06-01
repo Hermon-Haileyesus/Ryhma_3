@@ -32,7 +32,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <a href="index.php" class="<?= basename($_SERVER['PHP_SELF']) === 'index.php' ? 'active' : '' ?>">Etusivu</a>
         <a href="menu.php" class="<?= basename($_SERVER['PHP_SELF']) === 'menu.php' ? 'active' : '' ?>">Ruokalista</a>
-        <a href="cart.php" class="<?= basename($_SERVER['PHP_SELF']) === 'cart.php' ? 'active' : '' ?>">Ostoskori <span id="cart-count"><?= isset($_SESSION['cart']) ? array_sum(array_column($_SESSION['cart'], 'quantity')) : 0 ?></span>
+        <a href="cart.php" class="<?= basename($_SERVER['PHP_SELF']) === 'cart.php' ? 'active' : '' ?>">Ostoskori <span id="cart-count"><?= isset($_SESSION['cart']) ? array_sum(array_column($_SESSION['cart'], 'quantity')) : 0 ?></span></a>s
 
         <?php if(isset($_SESSION['user_id'])){ ?>
 
@@ -41,7 +41,14 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <?php } else { ?>
 
-            <a href="log_in.php" class="<?= basename($_SERVER['PHP_SELF']) === 'log_in.php' ? 'active' : '' ?>">Kirjaudu</a>
+            <div class="login-menu">
+                <a href="#">Tili</a>
+
+                <div class="dropdown">
+                    <a href="log_in.php">Kirjaudu</a>
+                    <a href="register.php">Rekisteröidy</a>
+                </div>
+            </div>
            
 
         <?php } ?>

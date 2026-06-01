@@ -36,7 +36,14 @@ session_start();
 
         <?php } else { ?>
 
-            <a href="log_in.php" class="<?= basename($_SERVER['PHP_SELF']) === 'log_in.php' ? 'active' : '' ?>">Kirjaudu</a>
+            <div class="login-menu">
+                <a href="#">Tili</a>
+
+                <div class="dropdown">
+                    <a href="log_in.php">Kirjaudu</a>
+                    <a href="register.php">Rekisteröidy</a>
+                </div>
+            </div>
           
 
         <?php } ?>

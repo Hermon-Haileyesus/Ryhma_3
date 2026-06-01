@@ -477,3 +477,69 @@ footer {
 .form-container button:hover {
   background: green;
 }
+
+.login-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-43%);
+
+  min-width: 180px;
+
+  background: #1f1f1f;
+  border: 1px solid #333;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.login-menu:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.dropdown a {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 14px 18px;
+
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+
+  transition: background 0.2s ease;
+}
+
+.dropdown a:hover {
+  background: #2d2d2d;
+  color: #4caf50;
+}
+
+.dropdown::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #1f1f1f;
+}
