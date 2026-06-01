@@ -32,7 +32,7 @@ session_start();
             <a href="logout.php">Kirjaudu ulos</a>
         <?php } else { ?>
             <a href="log_in.php" class="<?= basename($_SERVER['PHP_SELF']) === 'log_in.php' ? 'active' : '' ?>">Kirjaudu</a>
-            <a href="register.php" class="<?= basename($_SERVER['PHP_SELF']) === 'register.php' ? 'active' : '' ?>">Rekisteröidy</a>
+           
         <?php } ?>
     </nav>
 
@@ -67,7 +67,9 @@ session_start();
         </div>
 
         <button type="submit" class="register-btn">Kirjaudu</button>
-
+      <div class="login-link">
+            <p>Ei tiliä? <a href="register.php">Luo uusi tili</a></p>
+        </div>
        
 
     </form>
